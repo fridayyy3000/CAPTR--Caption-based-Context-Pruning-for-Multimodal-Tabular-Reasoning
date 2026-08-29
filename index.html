@@ -54,6 +54,13 @@
   <script defer src="static/js/index.js"></script>
 
   <style>
+    * { box-sizing: border-box; }
+    
+    html { overflow-x: hidden; }
+    body { overflow-x: hidden; width: 100%; }
+    
+    img { max-width: 100%; height: auto; }
+    
     :root {
       --primary-color: #1e3a5f;
       --primary-hover: #152d4a;
@@ -77,8 +84,8 @@
     .team-member .name a:hover { color: var(--primary-hover); }
     .team-member .affiliation { font-size: 0.8rem; color: var(--text-secondary); }
 
-    .results-table-container { overflow-x: auto; margin: 1.5rem 0; border-radius: var(--border-radius); box-shadow: var(--shadow-md); border: 1px solid var(--border-color); }
-    .results-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; white-space: nowrap; }
+    .results-table-container { overflow-x: auto; margin: 1.5rem 0; border-radius: var(--border-radius); box-shadow: var(--shadow-md); border: 1px solid var(--border-color); -webkit-overflow-scrolling: touch; max-width: 100%; }
+    .results-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; white-space: nowrap; min-width: 600px; }
     .results-table thead th { background: var(--text-primary); color: white; padding: 0.5rem 0.6rem; text-align: center; font-weight: 600; position: sticky; top: 0; }
     .results-table thead th.subheader { background: #2d2d4e; font-size: 0.75rem; }
     .results-table tbody td { padding: 0.45rem 0.6rem; text-align: center; border-bottom: 1px solid var(--border-color); }
@@ -106,8 +113,8 @@
     .affiliation-block { display: inline-flex; align-items: center; gap: 0.4rem; margin: 0 0.5rem; }
     .affiliation-block .uni-logo { height: 1.2em; width: auto; }
 
-    .model-tabs { display: flex; justify-content: center; gap: 0.5rem; margin: 2rem 0 1.5rem; flex-wrap: wrap; }
-    .model-tab-btn { background: white; color: #1e3a5f; border: 2px solid #1e3a5f; padding: 0.6rem 1.25rem; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 0.9rem; transition: all 0.3s; font-family: 'Inter', sans-serif; }
+    .model-tabs { display: flex; justify-content: center; gap: 0.5rem; margin: 2rem 0 1.5rem; flex-wrap: wrap; padding: 0 0.5rem; }
+    .model-tab-btn { background: white; color: #1e3a5f; border: 2px solid #1e3a5f; padding: 0.6rem 1.25rem; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 0.9rem; transition: all 0.3s; font-family: 'Inter', sans-serif; white-space: nowrap; }
     .model-tab-btn:hover { background: #f5f6fa; transform: translateY(-1px); }
     .model-tab-btn.active { background: #1e3a5f; color: white; box-shadow: 0 4px 6px rgba(30, 58, 95, 0.2); }
     .model-results { display: none; }
@@ -121,13 +128,72 @@
       .model-tab-btn { padding: 0.5rem 0.9rem; font-size: 0.85rem; }
       .results-table { font-size: 0.72rem; }
       .results-table thead th, .results-table tbody td { padding: 0.35rem 0.4rem; }
+      
+      /* Title responsive */
+      .publication-title { font-size: 1.8rem !important; line-height: 1.3 !important; word-wrap: break-word; }
+      
+      /* Author section responsive */
+      .publication-authors { font-size: 0.9rem !important; line-height: 1.6; }
+      .publication-authors .author-block { display: inline-block; margin: 0.2rem 0.3rem; }
+      .publication-authors .uni-logo { height: 0.8em; }
+      .affiliation-block { display: block; margin: 0.5rem 0; }
+      .affiliation-block .uni-logo { height: 1em; }
+      
+      /* Buttons responsive */
+      .publication-links { padding: 0 1rem; }
+      .publication-links .link-block { margin: 0.3rem !important; }
+      .button { font-size: 0.85rem !important; padding: 0.6rem 1rem !important; }
+      
+      /* Venue badge */
+      .venue-badge { font-size: 0.85rem; padding: 0.35rem 0.8rem; }
+      
+      /* Container padding */
+      .container { padding: 0 1rem; max-width: 100%; }
+      .hero-body { padding: 2rem 1rem; }
+      .section { padding: 2rem 1rem; }
+      
+      /* Content text */
+      .content p { word-wrap: break-word; overflow-wrap: break-word; }
+      .content { font-size: 0.95rem; }
+      
+      /* Finding cards */
+      .finding-card { padding: 1rem; }
+      .finding-card .number { font-size: 1.5rem; }
+      .finding-card .label { font-size: 0.8rem; }
+      
+      /* Figure captions */
+      .figure-caption { font-size: 0.85rem; padding: 0 0.5rem; }
+    }
+    
+    @media screen and (max-width: 480px) {
+      /* Extra small screens */
+      .publication-title { font-size: 1.5rem !important; word-break: break-word; }
+      .publication-authors { font-size: 0.85rem !important; }
+      .publication-authors .author-block { display: block; margin: 0.3rem 0; }
+      .button { font-size: 0.8rem !important; padding: 0.5rem 0.8rem !important; }
+      .model-tab-btn { padding: 0.4rem 0.6rem; font-size: 0.75rem; margin: 0.2rem; }
+      .model-tabs { gap: 0.3rem; }
+      .results-table { font-size: 0.65rem; }
+      .results-table thead th, .results-table tbody td { padding: 0.25rem 0.3rem; }
+      .findings-grid { grid-template-columns: 1fr; }
+      .team-grid { justify-content: center; }
+      .team-member { width: 100px; }
+      .team-member img { width: 90px; height: 90px; }
+      .team-member .name { font-size: 0.85rem; }
+      .affiliation-block { display: block; text-align: center; margin: 0.3rem 0; }
+      .hero-body { padding: 1.5rem 0.75rem; }
+      .section { padding: 1.5rem 0.75rem; }
+      .content { font-size: 0.9rem; }
     }
 
-    .section-image { border-radius: var(--border-radius-lg); box-shadow: var(--shadow-lg); transition: var(--transition); max-width: 100%; }
+    .section-image { border-radius: var(--border-radius-lg); box-shadow: var(--shadow-lg); transition: var(--transition); max-width: 100%; height: auto; }
     .section-image:hover { transform: translateY(-2px); box-shadow: var(--shadow-xl); }
-    .teaser-image { border-radius: var(--border-radius-lg); box-shadow: var(--shadow-lg); transition: var(--transition); width: auto; height: auto; max-width: 900px; object-fit: contain; display: block; margin: 0 auto; }
+    .teaser-image { border-radius: var(--border-radius-lg); box-shadow: var(--shadow-lg); transition: var(--transition); width: 100%; height: auto; max-width: 900px; object-fit: contain; display: block; margin: 0 auto; }
     .teaser-image:hover { transform: translateY(-2px); box-shadow: var(--shadow-xl); }
-    @media screen and (max-width: 768px) { .teaser-image { max-width: 100%; padding: 0 1rem; } }
+    @media screen and (max-width: 768px) { 
+      .teaser-image { max-width: 100%; padding: 0 0.5rem; } 
+      .section-image { max-width: 100%; padding: 0 0.5rem; }
+    }
   </style>
 </head>
 <body>
