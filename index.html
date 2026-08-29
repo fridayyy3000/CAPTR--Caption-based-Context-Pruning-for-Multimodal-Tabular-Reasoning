@@ -54,16 +54,6 @@
   <script defer src="static/js/index.js"></script>
 
   <style>
-    * { box-sizing: border-box; }
-    
-    html { overflow-x: hidden; max-width: 100%; }
-    body { overflow-x: hidden; width: 100%; max-width: 100%; position: relative; }
-    
-    img { max-width: 100%; height: auto; display: block; }
-    
-    /* Prevent any element from causing horizontal scroll */
-    section, div, p, h1, h2, h3, h4, h5, h6 { max-width: 100%; }
-    
     :root {
       --primary-color: #1e3a5f;
       --primary-hover: #152d4a;
@@ -166,9 +156,6 @@
       
       /* Figure captions */
       .figure-caption { font-size: 0.85rem; padding: 0 0.5rem; }
-      
-      /* Images on mobile */
-      .section-image { width: 100% !important; max-width: 100% !important; height: auto !important; padding: 0 !important; }
     }
     
     @media screen and (max-width: 480px) {
@@ -190,19 +177,16 @@
       .hero-body { padding: 1.5rem 0.75rem; }
       .section { padding: 1.5rem 0.75rem; }
       .content { font-size: 0.9rem; }
-      
-      /* Force all images to be responsive on small screens */
-      .section-image { width: 100% !important; max-width: 100% !important; height: auto !important; }
-      img { max-width: 100% !important; height: auto !important; }
     }
 
-    .section-image { border-radius: var(--border-radius-lg); box-shadow: var(--shadow-lg); transition: var(--transition); max-width: 100%; height: auto; }
+    .section-image { border-radius: var(--border-radius-lg); box-shadow: var(--shadow-lg); transition: var(--transition); max-width: 100%; }
     .section-image:hover { transform: translateY(-2px); box-shadow: var(--shadow-xl); }
-    .teaser-image { border-radius: var(--border-radius-lg); box-shadow: var(--shadow-lg); transition: var(--transition); width: 100%; height: auto; max-width: 900px; object-fit: contain; display: block; margin: 0 auto; }
+    .teaser-image { border-radius: var(--border-radius-lg); box-shadow: var(--shadow-lg); transition: var(--transition); width: auto; height: auto; max-width: 900px; object-fit: contain; display: block; margin: 0 auto; }
     .teaser-image:hover { transform: translateY(-2px); box-shadow: var(--shadow-xl); }
-    @media screen and (max-width: 768px) { 
-      .teaser-image { max-width: 100% !important; width: 100% !important; padding: 0 !important; margin: 0 auto; } 
-      .section-image { max-width: 100% !important; width: 100% !important; padding: 0 !important; }
+    
+    @media screen and (max-width: 768px) {
+      .teaser-image { max-width: 100%; padding: 0 1rem; }
+      .section-image { max-width: 100%; padding: 0 1rem; }
     }
   </style>
 </head>
@@ -273,11 +257,9 @@
 
   <!-- Teaser -->
   <section class="hero teaser">
-    <div class="container is-max-desktop">
-      <div class="hero-body has-text-centered" style="padding: 1rem;">
-        <div style="width: 100%; max-width: 100%; overflow: hidden;">
-          <img src="static/images/figures/captr_framework.jpg" alt="CAPTR two-stage framework" class="teaser-image" loading="lazy">
-        </div>
+    <div class="container is-widescreen">
+      <div class="hero-body has-text-centered">
+        <img src="static/images/figures/captr_framework.jpg" alt="CAPTR two-stage framework" class="teaser-image" loading="lazy">
         <p class="figure-caption">
           CAPTR replaces images with captions, prunes irrelevant rows and columns, then restores images for final multimodal reasoning. This reduces context length by 80% while improving accuracy by up to 8%.
         </p>
@@ -330,9 +312,7 @@
               CAPTR is a two-stage approach. <strong>Stage 1: Caption-based Context Pruning</strong> replaces images with query-independent captions, converting the multimodal table into a text-only table. Column and row pruning then uses symbolic (SQL) and semantic reasoning to select only the relevant parts. Three captioning strategies are evaluated: naive, detailed, and short captions. <strong>Stage 2: Multimodal Reasoning</strong> converts the pruned text table back to multimodal format by replacing captions with their original images. The compact table is passed through the MLLM, benefiting from reduced context length and reduced distraction from irrelevant images.
             </p>
           </div>
-          <div style="width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch;">
-            <img src="static/images/figures/captr_filtered-1.png" alt="CAPTR two-stage pipeline" class="section-image" loading="lazy">
-          </div>
+          <img src="static/images/figures/captr_filtered-1.png" alt="CAPTR two-stage pipeline" class="section-image" loading="lazy">
           <p class="figure-caption">
             CAPTR pipeline: Stage 1 converts images to captions and prunes irrelevant rows/columns. Stage 2 restores images in the pruned table for final multimodal reasoning.
           </p>
@@ -455,11 +435,9 @@
           </div>
 
           <!-- Error Analysis -->
-          <div class="has-text-centered" style="margin-top: 2.5rem; overflow-x: auto; -webkit-overflow-scrolling: touch;">
+          <div class="has-text-centered" style="margin-top: 2.5rem;">
             <h3 class="title is-5 has-text-centered">Error Analysis</h3>
-            <div style="display: inline-block; max-width: 100%;">
-              <img src="static/images/figures/error_distribution.png" alt="Error distribution across datasets and models" class="section-image" style="width: 100%; max-width: 800px; height: auto;" loading="lazy">
-            </div>
+            <img src="static/images/figures/error_distribution.png" alt="Error distribution across datasets and models" class="section-image" style="max-width: 800px;" loading="lazy">
             <p class="figure-caption">
               <strong>Error distribution.</strong> Entity confusion is the dominant error type across all datasets and models (50-60%), followed by partial extraction (13-30%).
             </p>
