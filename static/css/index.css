@@ -116,10 +116,15 @@ body {
 /* Publication Content Styling */
 .publication-title {
     font-family: 'Inter', sans-serif !important;
-    font-weight: 800 !important;
+    font-weight: 400 !important;
     color: var(--text-primary) !important;
     margin-bottom: 2rem !important;
     line-height: 1.1 !important;
+}
+
+.publication-title .acronym-letter {
+    color: var(--primary-color) !important;
+    font-weight: 700 !important;
 }
 
 .publication-banner {

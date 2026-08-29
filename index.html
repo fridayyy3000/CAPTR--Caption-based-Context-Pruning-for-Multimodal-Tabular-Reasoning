@@ -21,6 +21,12 @@
   <meta name="citation_title" content="CAPTR: Caption-based Context Pruning for Multimodal Tabular Reasoning">
   <meta name="citation_publication_date" content="2026">
   <meta name="citation_conference_title" content="Proceedings of the Association for Computational Linguistics: EMNLP 2026">
+  <meta name="citation_author" content="Titiya, Prasham">
+  <meta name="citation_author" content="Engländer, Leon">
+  <meta name="citation_author" content="Najpande, Gaurav">
+  <meta name="citation_author" content="Kumar, Tampu Ravi">
+  <meta name="citation_author" content="Gurevych, Iryna">
+  <meta name="citation_author" content="Gupta, Vivek">
   
   <meta name="theme-color" content="#1e3a5f">
 
@@ -94,6 +100,12 @@
     .figure-caption { font-size: 0.9rem; color: var(--text-secondary); text-align: center; margin-top: 0.5rem; font-style: italic; line-height: 1.5; }
     .venue-badge { display: inline-block; background: linear-gradient(135deg, #e8edf5, #dce3f0); color: var(--primary-color); padding: 0.4rem 1rem; border-radius: var(--border-radius); font-weight: 700; font-size: 0.95rem; border: 1px solid #c5cfe0; margin-top: 0.5rem; }
 
+    .publication-authors .uni-logo { height: 0.9em; width: auto; display: inline-block; vertical-align: baseline; margin-left: 0.15rem; margin-right: 0.15rem; position: relative; top: 0.05em; }
+    .publication-authors .author-block a { color: var(--text-primary); text-decoration: none; transition: color 0.2s; }
+    .publication-authors .author-block a:hover { color: var(--primary-color); text-decoration: underline; }
+    .affiliation-block { display: inline-flex; align-items: center; gap: 0.4rem; margin: 0 0.5rem; }
+    .affiliation-block .uni-logo { height: 1.2em; width: auto; }
+
     .model-tabs { display: flex; justify-content: center; gap: 0.5rem; margin: 2rem 0 1.5rem; flex-wrap: wrap; }
     .model-tab-btn { background: white; color: #1e3a5f; border: 2px solid #1e3a5f; padding: 0.6rem 1.25rem; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 0.9rem; transition: all 0.3s; font-family: 'Inter', sans-serif; }
     .model-tab-btn:hover { background: #f5f6fa; transform: translateY(-1px); }
@@ -132,21 +144,32 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">CAPTR: <span class="acronym-letter">Ca</span>ption-based Context <span class="acronym-letter">P</span>runing for <span class="acronym-letter">T</span>abular <span class="acronym-letter">R</span>easoning</h1>
+            <h1 class="title is-1 publication-title"><span class="acronym-letter">CAPTR:</span> <span class="acronym-letter">C</span>aption-based Context <span class="acronym-letter">P</span>runing for <span class="acronym-letter">T</span>abular <span class="acronym-letter">R</span>easoning</h1>
             <div class="is-size-5 publication-authors">
-              <!-- TODO: Replace with actual author names and links -->
-              <span class="author-block"><a href="#" target="_blank">Author 1</a>,</span>
-              <span class="author-block"><a href="#" target="_blank">Author 2</a>,</span>
-              <span class="author-block"><a href="#" target="_blank">Author 3</a>,</span>
-              <span class="author-block"><a href="#" target="_blank">Author 4</a>,</span>
-              <span class="author-block"><a href="#" target="_blank">Author 5</a>,</span>
-              <span class="author-block"><a href="#" target="_blank">Author 6</a></span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/prasham-titiya/" target="_blank">Prasham Titiya</a><img src="static/images/asu-logo.png" alt="ASU" class="uni-logo">,
+              </span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/leon-arne-englaender/" target="_blank">Leon Engländer</a><img src="static/images/tu-darmstadt-logo.jpeg" alt="TU Darmstadt" class="uni-logo">,
+              </span>
+              <span class="author-block">
+                <a href="https://fridayyy3000.github.io/gaurav.najpande/" target="_blank">Gaurav Najpande</a><img src="static/images/asu-logo.png" alt="ASU" class="uni-logo">,
+              </span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/tampuravi/" target="_blank">Tampu Ravi Kumar</a><img src="static/images/asu-logo.png" alt="ASU" class="uni-logo">,
+              </span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/iryna-gurevych-73a46364/" target="_blank">Iryna Gurevych</a><img src="static/images/tu-darmstadt-logo.jpeg" alt="TU Darmstadt" class="uni-logo">,
+              </span>
+              <span class="author-block">
+                <a href="https://vgupta123.github.io/" target="_blank">Vivek Gupta</a><img src="static/images/asu-logo.png" alt="ASU" class="uni-logo">
+              </span>
             </div>
             <div class="is-size-5 publication-authors">
-              <!-- TODO: Replace with actual affiliations -->
-              <span class="author-block">Arizona State University</span>
+              <span class="affiliation-block"><img src="static/images/asu-logo.png" alt="ASU" class="uni-logo">Arizona State University</span>
+              <span class="affiliation-block"><img src="static/images/tu-darmstadt-logo.jpeg" alt="TU Darmstadt" class="uni-logo">Technische Universität Darmstadt</span>
               <br>
-              <span class="venue-badge">EMNLP 2026</span>
+              <span class="venue-badge">EMNLP 2026 MainConference</span>
             </div>
             <div class="column has-text-centered">
               <div class="publication-links" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem;">
@@ -369,54 +392,35 @@
     <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered">Team</h2>
       <div class="team-grid">
-        <!-- TODO: Replace with actual author headshots, names, and links -->
         <div class="team-member">
-          <img src="static/images/authors/author1.jpg" alt="Author 1">
-          <div class="name"><a href="#" target="_blank">Author 1</a></div>
+          <img src="static/images/authors/prasham.jpeg" alt="Prasham Titiya">
+          <div class="name"><a href="https://openreview.net/profile?id=~Prasham_Titiya1" target="_blank">Prasham Titiya</a></div>
         </div>
         <div class="team-member">
-          <img src="static/images/authors/author2.jpg" alt="Author 2">
-          <div class="name"><a href="#" target="_blank">Author 2</a></div>
+          <img src="static/images/authors/leon.png" alt="Leon Engländer">
+          <div class="name"><a href="https://openreview.net/profile?id=~Leon_Engl%C3%A4nder1" target="_blank">Leon Engländer</a></div>
         </div>
         <div class="team-member">
-          <img src="static/images/authors/author3.jpg" alt="Author 3">
-          <div class="name"><a href="#" target="_blank">Author 3</a></div>
+          <img src="static/images/authors/gaurav.jpeg" alt="Gaurav Najpande">
+          <div class="name"><a href="https://openreview.net/profile?id=~Gaurav_Najpande1" target="_blank">Gaurav Najpande</a></div>
         </div>
         <div class="team-member">
-          <img src="static/images/authors/author4.jpg" alt="Author 4">
-          <div class="name"><a href="#" target="_blank">Author 4</a></div>
+          <img src="static/images/authors/tampu.png" alt="Tampu Ravi Kumar">
+          <div class="name"><a href="https://openreview.net/profile?id=~Tampu_Ravi_Kumar1" target="_blank">Tampu Ravi Kumar</a></div>
         </div>
         <div class="team-member">
-          <img src="static/images/authors/author5.jpg" alt="Author 5">
-          <div class="name"><a href="#" target="_blank">Author 5</a></div>
+          <img src="static/images/authors/iryna.jpeg" alt="Iryna Gurevych">
+          <div class="name"><a href="https://openreview.net/profile?id=~Iryna_Gurevych1" target="_blank">Iryna Gurevych</a></div>
         </div>
         <div class="team-member">
-          <img src="static/images/authors/author6.jpg" alt="Author 6">
-          <div class="name"><a href="#" target="_blank">Author 6</a></div>
+          <img src="static/images/authors/vivek.jpeg" alt="Vivek Gupta">
+          <div class="name"><a href="https://openreview.net/profile?id=~Vivek_Gupta2" target="_blank">Vivek Gupta</a></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- BibTeX -->
-  <section class="section hero is-light" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <div class="bibtex-header">
-        <h2 class="title">BibTeX</h2>
-        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
-          <i class="fas fa-copy"></i>
-          <span class="copy-text">Copy</span>
-        </button>
-      </div>
-      <!-- TODO: Update with actual author names and arXiv URL -->
-      <pre id="bibtex-code"><code>@inproceedings{captr2026,
-  title={CAPTR: Caption-based Context Pruning for Multimodal Tabular Reasoning},
-  author={TODO},
-  booktitle={Proceedings of the Association for Computational Linguistics: EMNLP 2026},
-  year={2026}
-}</code></pre>
-    </div>
-  </section>
+
 
   </main>
 
